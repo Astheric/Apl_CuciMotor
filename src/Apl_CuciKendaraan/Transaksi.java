@@ -352,11 +352,6 @@ try {
 
     double hargaDouble = Double.parseDouble(hargaString); // Parse sebagai double
 
-    // Sekarang Anda memiliki harga dalam bentuk double.
-    // Jika Anda ingin menggunakannya sebagai integer (misal karena Anda tahu `.00` itu nol),
-    // Anda bisa mengkonversinya lagi, tapi hati-hati dengan pembulatan.
-    // int hargaInt = (int) hargaDouble; // Ini akan memotong bagian desimal (30000.00 jadi 30000)
-
     // Untuk uang pelanggan juga:
     String uangPelangganString = jTextField4.getText();
     uangPelangganString = uangPelangganString.replace(",", ""); // Hapus koma ribuan jika ada
@@ -377,8 +372,7 @@ try {
         jLabel8.setText("Uangnya Pas");
     }else {
          jLabel8.setText(jumlahString);
-    }
-    
+                 }
     } catch (NumberFormatException e) {
     JOptionPane.showMessageDialog(this, "Error: Format harga atau uang tidak valid. Pastikan hanya angka dan titik desimal (jika ada).");
     e.printStackTrace();
